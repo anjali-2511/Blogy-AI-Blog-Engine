@@ -1,6 +1,7 @@
 import streamlit as st
 from prompt_engine import generate_prompt
 from seo_checker import analyze_seo
+from keyword_engine import generate_keywords
 
 st.title("AI Blog Generator with SEO Analyzer")
 
@@ -8,6 +9,11 @@ keyword = st.text_input("Enter a keyword")
 
 if st.button("Generate Blog"):
     if keyword:
+        keywords = generate_keywords(keyword)
+
+        st.subheader("Keyword Clusters")
+        for k in keywords:
+            st.write("-", k)
         prompt = generate_prompt(keyword)
 
         # Mock AI output
