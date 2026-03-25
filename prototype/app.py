@@ -3,63 +3,100 @@ from prompt_engine import generate_prompt
 from seo_checker import analyze_seo
 from keyword_engine import generate_keywords
 
+# -------- Context Function --------
+def get_context(keyword):
+    if keyword.lower() in ["coder", "developer", "programmer"]:
+        return "person"
+    elif "seo" in keyword.lower() or "marketing" in keyword.lower():
+        return "marketing"
+    else:
+        return "general"
+
+# -------- UI --------
 st.title("AI Blog Generator with SEO Analyzer")
 
 keyword = st.text_input("Enter a keyword")
 
 if st.button("Generate Blog"):
     if keyword:
+
+        # -------- Keyword Clustering --------
         keywords = generate_keywords(keyword)
 
         st.subheader("Keyword Clusters")
         for k in keywords:
             st.write("-", k)
-        prompt = generate_prompt(keyword)
 
-        # Mock AI output
+        # -------- Context Logic --------
+        context = get_context(keyword)
+
+        if context == "person":
+            intro = f"{keyword.title()} is a professional who writes code and develops software applications."
+            definition = f"A {keyword.lower()} is responsible for building, testing, and maintaining software systems."
+
+        elif context == "marketing":
+            intro = f"{keyword.title()} is a crucial strategy used in digital marketing."
+            definition = f"{keyword.title()} helps improve online visibility and organic traffic."
+
+        else:
+            intro = f"{keyword.title()} is an important concept used across industries."
+            definition = f"{keyword.title()} plays a key role in improving efficiency and performance."
+
+        # -------- Blog Generation --------
         blog = f"""
 # {keyword.title()} - Complete Guide
 
 ## Introduction
-{keyword.title()} is becoming an important topic in today’s digital world. Businesses and individuals are using it to improve efficiency and achieve better results.
+{intro}
 
 ## What is {keyword.title()}?
-{keyword.title()} refers to strategies and tools used to improve performance, productivity, and outcomes in a specific domain.
+{definition}
 
-## Key Benefits of {keyword.title()}
-- Improves productivity and efficiency
-- Saves time and cost
-- Helps in better decision making
-- Enhances scalability
+## Why is This Concept Important?
+- Plays a key role in its domain  
+- Helps improve efficiency and productivity  
+- Supports real-world problem solving  
+
+## Key Benefits of This Approach
+- Improves productivity  
+- Saves time and effort  
+- Enables better solutions  
 
 ## How to Use {keyword.title()}
-1. Understand your goals
-2. Choose the right tools
-3. Implement step-by-step strategy
-4. Measure performance
+- Learn the basics  
+- Practice regularly  
+- Apply in real-world scenarios  
+
+## Real-World Examples
+- Companies hire skilled professionals in this field  
+- Startups rely on experts for product development  
+- Individuals learn these skills for career growth  
 
 ## Related Articles
-- Learn more about SEO strategies
+- Learn more about SEO strategies  
 - Explore AI content marketing tools
+ 
+## Advanced Tips
+- Focus on quality over quantity  
+- Keep content updated regularly  
+- Analyze performance using tools   
 
 ## Conclusion
-{keyword.title()} is a powerful approach for modern businesses to stay competitive and grow efficiently.
+{keyword.title()} is an essential concept in its field and plays a major role in growth and innovation.
 
 ## FAQ
 
-Q1: What is {keyword}?
-A: It is a concept or tool used to improve outcomes in a specific area.
+Q1: What is a {keyword.lower()}?
+A: {definition}
 
-Q2: Why is {keyword} important?
-A: It helps improve efficiency, reduce cost, and increase performance.
+Q2: Why is it important?
+A: It helps solve real-world problems and improves efficiency.
 """
-
-         
 
         st.subheader("Generated Blog")
         st.write(blog)
 
-        # SEO Analysis
+        # -------- SEO Analysis --------
         seo_results = analyze_seo(blog, keyword)
 
         st.subheader("SEO Analysis")
