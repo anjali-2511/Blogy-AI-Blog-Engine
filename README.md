@@ -17,10 +17,7 @@ repeatability, measurable SEO strength, and compatibility with search engines an
 • Keyword Density Compliance  
 • Internal Linking Logic  
 • Scalability and Replicability  
-## Note: Teams are required to develop a fully functional prototype and provide a detailed technical walkthrough 
-during their presentation. Your submission must include robust logical reasoning and strategic justification, as 
-the prototype will be subjected to a live demonstration and stress-test during the Final Round of the 
-hackathon. 
+## Note: Teams are required to develop a fully functional prototype and provide a detailed technical walkthrough during their presentation. Your submission must include robust logical reasoning and strategic justification, as the prototype will be subjected to a live demonstration and stress-test during the Final Round of the hackathon. 
 
 ## Problem
 Businesses and marketers struggle to consistently create high-quality, SEO-optimized blogs. Manual content creation is time-consuming, expensive, and often fails to rank well on search engines or attract organic traffic.
