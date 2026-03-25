@@ -1,2 +1,6 @@
-# Blogy-AI-Blog-Engine
-AI-powered blog generation engine that converts keyword intent into SEO-optimized, high-ranking, and conversion-focused content using structured prompt architecture. Built for the Blogy Prompt &amp; Profit Hackathon.
+Blogy AI Blog Engine
+Problem
+Businesses and marketers struggle to consistently create high-quality, SEO-optimized blogs. Manual content creation is time-consuming, expensive, and often fails to rank well on search engines or attract organic traffic.
+
+Solution
+We are building an AI-powered blog engine that converts keyword intent into structured, SEO-optimized blogs using smart prompt engineering. The system ensures faster content creation with improved search visibility and scalability.
