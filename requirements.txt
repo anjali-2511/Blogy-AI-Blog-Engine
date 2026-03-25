@@ -7,4 +7,4 @@ pip install openai
 
 2)Run the application:
 
-streamlit run prototype/app.pypip  
+streamlit run app.py 
