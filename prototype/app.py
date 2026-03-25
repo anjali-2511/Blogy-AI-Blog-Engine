@@ -28,13 +28,21 @@ if st.button("Generate Blog"):
         - Saves time
         - Helps rank on Google
 
+        ## Related Articles
+-       Learn more about SEO strategies
+-       Explore AI content marketing tools
+
         ## Conclusion
         {keyword} is essential for modern businesses.
 
         ## FAQ
         Q1: What is {keyword}?
         A: It is an AI-based solution.
+
+         
         """
+
+         
 
         st.subheader("Generated Blog")
         st.write(blog)
