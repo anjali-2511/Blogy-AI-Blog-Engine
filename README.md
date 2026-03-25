@@ -34,3 +34,14 @@ Uses AI to generate complete blog content.
 
 ### 4. SEO Analyzer
 Evaluates keyword density, readability, and structure.
+
+Note on AI Integration
+
+Currently, the project uses a mock AI generation system due to API quota limitations.
+
+However, the architecture is fully designed to integrate real AI models such as OpenAI for scalable and production-level blog generation.
+
+Future Upgrade
+Integrate real LLM APIs (OpenAI / others)
+Add advanced SEO scoring
+Enable auto blog publishing
