@@ -1,0 +1,7 @@
+Keyword: SEO optimization
+SEO Score: 30
+Word Count: 206
+
+Keyword: programmer
+SEO Score: 40
+Word Count: 300
