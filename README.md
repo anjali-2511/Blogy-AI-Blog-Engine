@@ -73,10 +73,19 @@ Evaluates keyword density, readability, and structure.
  AI Naturalness  
  Scalability  
 
- ## Part 2: Blogy Dashboard & Product Analysis
-
-### Objective
-To evaluate the Blogy dashboard from a growth, UX, and SEO perspective and identify key improvements for better user experience, conversion, and organic performance.
+# Part 2 : Blogy Dashboard & Product Analysis: 
+## Objective- 
+Critically evaluate the Blogy dashboard from a growth, UX, and SEO perspective to identify structural 
+weaknesses, conversion gaps, technical risks, and feature opportunities that can strengthen organic ranking 
+performance and improve customer onboarding and retention. 
+## Analysis Metrics- 
+• Bugs Identified (UX, technical, SEO, indexing) 
+• User Flow Design (targeting startups and companies as primary customers)  
+• Conversion Funnel Friction Points  
+• New Feature Ideation & Innovation Depth  
+• SEO Structural Risk Identification  
+• Product Differentiation Strategy  
+• Technical Scalability Feasibility 
 
 ---
 
@@ -144,10 +153,34 @@ This system stands out by combining:
 - Easily extendable for real-world deployment
 
 
- ## Part 3: Blog Creation & SEO Validation
-
-### Objective
-To generate SEO-optimized blogs using the AI system and validate their effectiveness through structure, readability, and publishing across multiple platforms.
+# Part 3 : Blog Creation & SEO Validation: 
+## Objective- 
+Using your AI prompt architecture, generate two complete SEO-optimized blogs titled “Blogy – Best AI Blog 
+Automation Tool in India” and “How Blogy is Disrupting Martech – Organic Traffic on Autopilot, Cheapest 
+SEO.” Both blogs must be structured for ranking, authority positioning, conversion performance, and 
+compatibility with search engines and AI answer engines. Publish on any five approved blogging platforms. 
+Approved Publishing Platforms  
+• Medium  
+• LinkedIn  
+• WordPress.com  
+• Blogger 
+• Substack 
+• Dev.to  
+• Hashnode  
+• Tumblr  
+• Vocal Media  
+• Quora  
+## Analysis Metrics-  
+• SEO Score (SEMrush/Ahrefs or similar tool) 
+• Keyword Placement Accuracy  
+• Content Depth vs Competitor Pages  
+• Featured Snippet Eligibility 
+• Readability Score 
+• AI Detection Percentage  
+• GEO Optimization Readiness  
+• CTA Effectiveness  
+• Structural Formatting Strength  
+• Platform Adaptation Quality 
 
 ---
 
