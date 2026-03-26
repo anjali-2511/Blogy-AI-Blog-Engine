@@ -106,7 +106,14 @@ A: It helps solve real-world problems and improves efficiency.
 """
          
         st.subheader("Generated Blog")
-        st.write(blog) 
+        st.write(blog)
+
+        st.download_button(
+    label="📥 Download Blog",
+    data=blog,
+    file_name=f"{keyword}_blog.txt",
+    mime="text/plain"
+) 
         st.write("✅ Blog Generated")
 
         # -------- SEO Analysis --------
