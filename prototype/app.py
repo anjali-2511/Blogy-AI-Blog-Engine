@@ -118,6 +118,7 @@ A: It helps solve real-world problems and improves efficiency.
     mime="text/plain"
 ) 
         st.write("✅ Blog Generated")
+        st.success("✅ Blog Generated Successfully!")
 
         # -------- SEO Analysis --------
         seo_results = analyze_seo(blog, keyword)
