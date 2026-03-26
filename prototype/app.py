@@ -1,11 +1,11 @@
 import streamlit as st
-from prompt_engine import generate_prompt
-from seo_checker import analyze_seo
+import random
 from keyword_engine import generate_keywords
+from seo_checker import analyze_seo
 
 # -------- Context Function --------
 def get_context(keyword):
-    if keyword.lower() in ["coder", "developer", "programmer"]:
+    if any(word in keyword.lower() for word in ["coder", "developer", "programmer"]):
         return "person"
     elif "seo" in keyword.lower() or "marketing" in keyword.lower():
         return "marketing"
@@ -16,7 +16,6 @@ def get_context(keyword):
 st.title("AI Blog Generator with SEO Analyzer")
 
 st.markdown("## 🚀 AI Blog Generation Workflow")
-
 st.markdown("""
 ### Steps:
 1. Enter Keyword  
@@ -31,8 +30,9 @@ st.write("SEO optimization, AI tools, digital marketing, programmer, startup gro
 keyword = st.text_input("Enter a keyword")
 
 if st.button("Generate Blog"):
-    st.write("🔄 Processing...")
     if keyword:
+
+        st.write("🔄 Processing...")
 
         # -------- Keyword Clustering --------
         keywords = generate_keywords(keyword)
@@ -40,6 +40,7 @@ if st.button("Generate Blog"):
         st.subheader("Keyword Clusters")
         for k in keywords:
             st.write("-", k)
+
         st.write("✅ Keywords Generated")
 
         # -------- Context Logic --------
@@ -57,6 +58,35 @@ if st.button("Generate Blog"):
             intro = f"{keyword.title()} is an important concept used across industries."
             definition = f"{keyword.title()} plays a key role in improving efficiency and performance."
 
+        # -------- Dynamic Sections --------
+        benefits = [
+            f"Improves {keyword} efficiency",
+            f"Saves time using {keyword}",
+            f"Enhances {keyword} performance",
+            f"Supports growth using {keyword}"
+        ]
+
+        faq_answer = random.choice([
+            f"{keyword.title()} helps improve efficiency and productivity.",
+            f"{keyword.title()} is widely used to solve real-world problems.",
+            f"{keyword.title()} plays a crucial role in modern systems."
+        ])
+
+        extra_section = ""
+        if random.choice([True, False]):
+            extra_section = f"""
+## Advanced Insights
+{keyword.title()} is evolving rapidly and is being adopted across industries. Understanding its real-world applications can help maximize its potential.
+"""
+
+        use_case_section = ""
+        if random.choice([True, False]):
+            use_case_section = f"""
+## Use Cases
+- {keyword} in startups  
+- {keyword} in enterprises  
+"""
+
         # -------- Blog Generation --------
         blog = f"""
 # {keyword.title()} - Complete Guide
@@ -68,65 +98,80 @@ if st.button("Generate Blog"):
 {definition}
 
 ## Why is This Concept Important?
+
 - Plays a key role in its domain  
 - Helps improve efficiency and productivity  
 - Supports real-world problem solving  
 
 ## Key Benefits of This Approach
-- Improves productivity  
-- Saves time and effort  
-- Enables better solutions  
+
+- {benefits[0]}  
+- {benefits[1]}  
+- {benefits[2]}  
+- {benefits[3]}  
 
 ## How to Use {keyword.title()}
+
 - Learn the basics  
 - Practice regularly  
 - Apply in real-world scenarios  
 
+{extra_section}
+
+{use_case_section}
+
 ## Real-World Examples
+
 - Companies hire skilled professionals in this field  
 - Startups rely on experts for product development  
 - Individuals learn these skills for career growth  
 
 ## Related Articles
+
 - Learn more about SEO strategies  
-- Explore AI content marketing tools
- 
+- Explore AI content marketing tools  
+
 ## Advanced Tips
+
 - Focus on quality over quantity  
 - Keep content updated regularly  
-- Analyze performance using tools   
+- Analyze performance using tools  
 
 ## Conclusion
+
 {keyword.title()} is an essential concept in its field and plays a major role in growth and innovation.
 
 ## FAQ
 
-Q1: What is a {keyword.lower()}?
-A: {definition}
+Q1: What is {keyword.lower()}?  
+A: {faq_answer}
 
-Q2: Why is it important?
+Q2: Why is it important?  
 A: It helps solve real-world problems and improves efficiency.
 """
-         
+
         st.subheader("Generated Blog")
         st.write(blog)
 
-        st.download_button(
-    label="📥 Download Blog",
-    data=blog,
-    file_name=f"{keyword}_blog.txt",
-    mime="text/plain"
-) 
-        st.write("✅ Blog Generated")
         st.success("✅ Blog Generated Successfully!")
+        st.write("✅ Blog Generated")
+
+        # -------- Download Feature --------
+        st.download_button(
+            label="📥 Download Blog",
+            data=blog,
+            file_name=f"{keyword}_blog.txt",
+            mime="text/plain"
+        )
 
         # -------- SEO Analysis --------
         seo_results = analyze_seo(blog, keyword)
 
-        st.subheader("💡 Suggestions to Improve SEO")
+        st.write("💡 Suggestions to Improve SEO")
 
         if seo_results["SEO Score"] < 50:
             st.write("- Increase content length")
+            st.write("- Reduce keyword repetition")
             st.write("- Improve readability")
         else:
             st.write("Your blog is well optimized!")
@@ -135,18 +180,21 @@ A: It helps solve real-world problems and improves efficiency.
 
         col1, col2 = st.columns(2)
 
-        with col1: st.metric("Word Count", seo_results["Word Count"])
-        st.metric("Keyword Density (%)", seo_results["Keyword Density (%)"])
+        with col1:
+            st.metric("Word Count", seo_results["Word Count"])
+            st.metric("Keyword Density (%)", seo_results["Keyword Density (%)"])
 
-        with col2: st.metric("Readability", seo_results["Readability"])
-        st.metric("SEO Score", seo_results["SEO Score"])
+        with col2:
+            st.metric("Readability", seo_results["Readability"])
+            st.metric("SEO Score", seo_results["SEO Score"])
+
+        st.write("✅ SEO Analysis Completed")
+
+        # -------- AI Pipeline --------
+        st.markdown("## 🧠 AI Pipeline")
+        st.markdown("""
+Keyword Input → Keyword Clustering → Context Understanding → Blog Generation → SEO Analysis
+""")
 
     else:
         st.warning("Please enter a keyword")
-    st.write("✅ SEO Analysis Completed")
-
-st.markdown("## 🧠 AI Pipeline")
-
-st.markdown("""
-Keyword Input → Keyword Clustering → Context Understanding → Blog Generation → SEO Analysis
-""")
