@@ -15,9 +15,20 @@ def get_context(keyword):
 # -------- UI --------
 st.title("AI Blog Generator with SEO Analyzer")
 
+st.markdown("## 🚀 AI Blog Generation Workflow")
+
+st.markdown("""
+### Steps:
+1. Enter Keyword  
+2. Generate Keyword Clusters  
+3. Create Blog  
+4. Analyze SEO  
+""")
+
 keyword = st.text_input("Enter a keyword")
 
 if st.button("Generate Blog"):
+    st.write("🔄 Processing...")
     if keyword:
 
         # -------- Keyword Clustering --------
@@ -26,6 +37,7 @@ if st.button("Generate Blog"):
         st.subheader("Keyword Clusters")
         for k in keywords:
             st.write("-", k)
+        st.write("✅ Keywords Generated")
 
         # -------- Context Logic --------
         context = get_context(keyword)
@@ -92,16 +104,38 @@ A: {definition}
 Q2: Why is it important?
 A: It helps solve real-world problems and improves efficiency.
 """
-
+         
         st.subheader("Generated Blog")
-        st.write(blog)
+        st.write(blog) 
+        st.write("✅ Blog Generated")
 
         # -------- SEO Analysis --------
         seo_results = analyze_seo(blog, keyword)
 
-        st.subheader("SEO Analysis")
-        for key, value in seo_results.items():
-            st.write(f"{key}: {value}")
+        st.subheader("💡 Suggestions to Improve SEO")
+
+        if seo_results["SEO Score"] < 50:
+            st.write("- Increase content length")
+            st.write("- Improve readability")
+        else:
+            st.write("Your blog is well optimized!")
+
+        st.subheader("📊 SEO Analysis Report")
+
+        col1, col2 = st.columns(2)
+
+        with col1: st.metric("Word Count", seo_results["Word Count"])
+        st.metric("Keyword Density (%)", seo_results["Keyword Density (%)"])
+
+        with col2: st.metric("Readability", seo_results["Readability"])
+        st.metric("SEO Score", seo_results["SEO Score"])
 
     else:
         st.warning("Please enter a keyword")
+    st.write("✅ SEO Analysis Completed")
+
+st.markdown("## 🧠 AI Pipeline")
+
+st.markdown("""
+Keyword Input → Keyword Clustering → Context Understanding → Blog Generation → SEO Analysis
+""")
