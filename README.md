@@ -73,4 +73,70 @@ Evaluates keyword density, readability, and structure.
  AI Naturalness  
  Scalability  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ## Demo Output
+
+The system generates:
+- Keyword clusters  
+- Structured blogs  
+- SEO analysis (word count, keyword density, readability, score)  
+
+Example:
+Keyword: SEO optimization  
+SEO Score: 30  
+
  
