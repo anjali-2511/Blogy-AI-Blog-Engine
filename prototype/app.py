@@ -25,6 +25,9 @@ st.markdown("""
 4. Analyze SEO  
 """)
 
+st.markdown("### 💡 Try Sample Keywords:")
+st.write("SEO optimization, AI tools, digital marketing, programmer, startup growth")
+
 keyword = st.text_input("Enter a keyword")
 
 if st.button("Generate Blog"):
