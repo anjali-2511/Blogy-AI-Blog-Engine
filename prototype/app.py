@@ -51,26 +51,28 @@ if st.button("Generate Blog"):
             definition = f"A {keyword.lower()} is responsible for building, testing, and maintaining software systems."
 
         elif context == "marketing":
-            intro = f"{keyword.title()} is a crucial strategy used in digital marketing."
-            definition = f"{keyword.title()} helps improve online visibility and organic traffic."
+            intro = f"{keyword.title()} plays an important role in modern business growth and online success."
+            definition = f"{keyword.title()} involves strategies and techniques used to reach audiences through digital platforms."
 
         else:
             intro = f"{keyword.title()} is an important concept used across industries."
             definition = f"{keyword.title()} plays a key role in improving efficiency and performance."
 
         # -------- Dynamic Sections --------
+       
         benefits = [
-            f"Improves {keyword} efficiency",
-            f"Saves time using {keyword}",
-            f"Enhances {keyword} performance",
-            f"Supports growth using {keyword}"
-        ]
+    "Improves overall efficiency",
+    "Saves time and effort",
+    "Enhances performance",
+    "Supports business growth"
+    ]
+        
 
         faq_answer = random.choice([
-            f"{keyword.title()} helps improve efficiency and productivity.",
-            f"{keyword.title()} is widely used to solve real-world problems.",
-            f"{keyword.title()} plays a crucial role in modern systems."
-        ])
+    "It helps improve efficiency and productivity.",
+    "It is widely used to solve real-world problems.",
+    "It plays a crucial role in modern systems."
+    ])
 
         extra_section = ""
         if random.choice([True, False]):
